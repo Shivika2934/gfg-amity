@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Testimonials from "./pages/Testimonials";
+import Navbar from "./components/Navbar"
+import Footer from "./components/Footer";
+import { AnimatePresence } from "framer-motion";
+import MainT from "./pages/Team";
+import DSADiaries from "./pages/events/DSADiaries";
+import ErrorPage from "./pages/errorPage";
+//import DSADiariesRegister from "./pages/events/DSADiariesRegister";
+import ThankYou from "./pages/events/ThankYou";
+import Events from "./pages/events";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      <AnimatePresence mode="wait">
+      <Routes> 
+        <Route path="/" element={ <Home/> } />
+        <Route path="/testimonials" element={ <Testimonials/> } />
+        <Route path="/team" element={<MainT/>}/>
+        <Route path="/events" element={<Events/>}/>
+        <Route path="/events/chatbot-construction-101" element={<DSADiaries/>}/> 
+        {/* <Route path="/events/chatbot-construction-101/register" element={<DSADiariesRegister/>}/>  */}
+        <Route path="/events/chatbot-construction-101/thank-you" element={<ThankYou/>}/>
+        <Route path="*" element={<ErrorPage/>}/>
+      </Routes>  
+      </AnimatePresence>
+      <Footer/>
+    </>
   );
 }
 
