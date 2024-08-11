@@ -25,22 +25,22 @@ export default function Navbar() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link className="nav-link"  to="/">
+                <Link className="nav-a"  to="/">
                   Home
                   </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/events">
+                <Link className="nav-a" to="/events">
                   Events
                   </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/team">
+                <Link className="nav-a" to="/team">
                   Team
                   </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="mailto:gfg.amity@gmail.com">
+                <Link className="nav-a" to="mailto:gfg.amity@gmail.com">
                   <button>Contact Us</button>
                   </Link>
               </li>
